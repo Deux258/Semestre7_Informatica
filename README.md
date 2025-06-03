@@ -1,2 +1,2 @@
 # Semestre7_Informatica
-Apuntes que hago de las clases que tengo
+Apuntes del 7mo semestre Ingeniería civil informática y Telecomunicaciones.
