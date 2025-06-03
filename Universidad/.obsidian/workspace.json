@@ -1,0 +1,228 @@
+{
+  "main": {
+    "id": "9e25bff1659bcc0f",
+    "type": "split",
+    "children": [
+      {
+        "id": "acb61c5dc5b176c3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "8f03f3e346eae777",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Clases/Ingeniería de Software.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Ingeniería de Software"
+            }
+          },
+          {
+            "id": "6842a9d7449cabb6",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Ayudantias/Sistemas Distribuidos AY.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Sistemas Distribuidos AY"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ef2d1607acd28f68",
+    "type": "split",
+    "children": [
+      {
+        "id": "5a6af5faa9bbf383",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "faf976156dedae6c",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "d87c0319fd2953ec",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "adef2501c0a29be1",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 244.5
+  },
+  "right": {
+    "id": "5c10ad70d326b028",
+    "type": "split",
+    "children": [
+      {
+        "id": "fdde69e7339b53a7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4467b25f3b79e766",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Actividades Clases.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Actividades Clases"
+            }
+          },
+          {
+            "id": "3844bcd8e52052a8",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "BE_LEARNING/Clase 1.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Clase 1"
+            }
+          },
+          {
+            "id": "e3e67d04d2b9d1a4",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "8a72489ecdbb9487",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Actividades Clases.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Actividades Clases"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "8f03f3e346eae777",
+  "lastOpenFiles": [
+    "Clases/Sistemas Distribuidos.md",
+    "Clases/Ingeniería de Software.md",
+    "Ayudantias/Sistemas Distribuidos AY.md",
+    "Ayudantias/Ingeniería de Software AY.md",
+    "Ayudantias/Gestion Organizacional AY.md",
+    "Clases/Gestión Organizacional.md",
+    "Chanchito Ing Software.md",
+    "Actividades Clases.md",
+    "Resumen Actividad TTL.canvas",
+    "Fotos/GO_Control_3_Diagrama_Completo.png",
+    "Fotos/GO_Control_3_Diagrama_Completo.png.crdownload",
+    "Fotos/Pasted image 20250410114716.png",
+    "Categoria.md",
+    "Ingeniería de Software.pdf",
+    "Untitled.canvas",
+    "Fotos/Pasted image 20250410121653.png",
+    "Clases/Comunicaciones Digitales.md",
+    "Ayudantias/Comunicaciones Digitales AY.md",
+    "2025-04-10.md",
+    "Untitled 1.canvas",
+    "Fotos/Pasted image 20250410122203.png",
+    "Fotos/Comunicaciones digitales F/Pasted image 20250327144522.png",
+    "Fotos/Comunicaciones digitales F/Pasted image 20250327144501.png",
+    "Fotos/Comunicaciones digitales F/Pasted image 20250327145012.png",
+    "Fotos/Comunicaciones digitales F/Pasted image 20250327145811.png",
+    "Fotos/Comunicaciones digitales F/Pasted image 20250327150137.png",
+    "Fotos/Comunicaciones digitales F/Pasted image 20250327151223.png",
+    "HANA.md",
+    "Fotos/Comunicaciones digitales F",
+    "Untitled 1.md",
+    "Fotos",
+    "BE_LEARNING/Clase 1.md",
+    "create a link.md",
+    "Ayudantias",
+    "Ingenieria de Software/desktop.ini",
+    "Clases",
+    "BE_LEARNING/desktop.ini",
+    "desktop.ini",
+    "BE_LEARNING"
+  ]
+}
