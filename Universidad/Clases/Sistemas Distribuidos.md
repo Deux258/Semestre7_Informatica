@@ -767,7 +767,7 @@ Entrada/Salida (Join/Leave) **Churm**
 
 #### C/S vs P2P
 
-![[Pasted image 20250410114716.png]]
+![[Pasted image 20250410114716 1.png]]
 
 ### ¿Por qué P2P?
 
@@ -788,7 +788,7 @@ Por encima de la red "física":
 
 Peers que se sobrepone a la primera red
 
-![[Pasted image 20250410115506.png]]
+![[Pasted image 20250410115506 1.png]]
 
 Si falla la conexión en la red física, el peer que está conectado directamente también.
 
@@ -834,7 +834,7 @@ Bueno para mapeos
 	Malo para datos
 
 
-![[Pasted image 20250410121653.png]]
+![[Pasted image 20250410121653 1.png]]
 
 
 Super eficiente para buscar
