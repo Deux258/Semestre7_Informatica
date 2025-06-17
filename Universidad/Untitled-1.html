@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BO Packaging - Aplicaciones QA</title>
+
+    <link rel="icon" href="img/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- AOS CSS para animaciones -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css_QA/Principal.css">
+    <style>
+        :root {
+            --primary-color: #2e7d32; /* Verde oscuro */
+            --secondary-color: #4caf50; /* Verde medio */
+            --accent-color: #8bc34a; /* Verde lima */
+            --light-color: #f1f8e9; /* Verde muy claro */
+            --dark-color: #1b5e20; /* Verde muy oscuro */
+            --text-color: #212529;
+            --text-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light-color);
+            color: var(--text-color);
+        }
+
+        /* Video de fondo */
+        .video-background {
+            position: relative;
+            width: 100%;
+            height: 27vh;
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .video-background video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(30, 130, 76, 0.7); /* Verde con transparencia */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 1rem;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            background-color: var(--dark-color);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .navbar-nav .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .navbar-nav .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: -5px; /* Ajusta esta propiedad para mover la línea hacia abajo */
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover:after,
+        .navbar-nav .nav-link.active:after {
+            width: 80%;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: white;
+        }
+
+
+        /* Card styling */
+        .card-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            height: 100%;
+        }
+
+        .card {
+            min-height: 350px;
+            display: flex;
+            flex-direction: column;
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+            background-color: white;
+            cursor: pointer;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            border-color: var(--secondary-color);
+            border-width: 2px;
+        }
+
+        .card-body {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 1.5rem;
+        }
+
+        .card-img-top {
+            max-height: 120px;
+            width: auto;
+            margin: 1.5rem auto 0;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.1);
+        }
+
+        .card-title {
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--primary-color);
+        }
+
+        .card-text {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Categoría badges */
+        .category-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 10;
+            background-color: rgba(46, 125, 50, 0.1);
+            color: var(--primary-color);
+        }
+
+        /* Footer styling */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            margin-top: 3rem;
+        }
+
+        footer h5:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+            bottom: 0;
+            left: 0;
+        }
+
+        footer a {
+            transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        footer a:hover {
+            color: white !important;
+            transform: translateX(5px);
+        }
+
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Sección de aplicaciones */
+        .apps-section {
+            background-color: white;
+            padding: 3rem 0;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background-color: var(--secondary-color);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Custom CSS for responsive cards */
+        .row.five-cards {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0 -0.5rem;
+        }
+
+        .row.five-cards > [class*='col-'] {
+            flex: 0 0 20%;
+            max-width: 20%;
+            padding: 0 0.5rem;
+        }
+
+        @media (max-width: 1400px) {
+            .row.five-cards > [class*='col-'] {
+                flex: 0 0 25%;
+                max-width: 25%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .row.five-cards > [class*='col-'] {
+                flex: 0 0 33.33%;
+                max-width: 33.33%;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .row.five-cards > [class*='col-'] {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#" data-aos="fade-right">
+                <i class="fa fa-industry me-2"></i> BO Packaging
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto" data-aos="fade-left">
+                    <li class="nav-item"><a class="nav-link active" href="http://172.16.2.246/Default.aspx">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Empresa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Aplicaciones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">BoElearning</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Video Banner -->
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-green-leaves-in-a-forest-1763-large.mp4" type="video/mp4">
+            Tu navegador no soporta videos HTML5.
+        </video>
+        <div class="video-overlay" data-aos="fade-down">
+            <h1 class="display-4 fw-bold mb-3">Aplicaciones BO Packaging</h1>
+            <p class="lead">Explora nuestras herramientas para la gestión de Packaging</p>
+        </div>
+    </div>
+
+    <!-- Cards Section -->
+    <div class="container my-5">
+        <div class="apps-section p-4">
+            <div class="row g-4 five-cards">
+                <!-- Card Example -->
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <a href="http://172.16.0.38/FichasTecnicasBO/default.aspx" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="img_QA/FichaTecnicaBO.png" class="card-img-top mx-auto" alt="FichaTecnicaBO">
+                            <div class="card-body">
+                                <h5 class="card-title">Ficha Técnica</h5>
+                                <p class="card-text">Gestiona fichas técnicas de productos.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Repeat Cards -->
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="150">
+                    <a href="http://172.16.0.38/SolicitudMaterialesBO/" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="./Imagenes/DeliveryChecklist.png" class="card-img-top mx-auto" alt="SolicitudMateriales">
+                            <div class="card-body">
+                                <h5 class="card-title">Solicitud de Materiales</h5>
+                                <p class="card-text">Consulta y solicitudes de Materiales.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="200">
+                    <a href="http://172.16.0.38/SIGC/LogOn.aspx" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="./Imagenes/Folder-documents-icon.png" class="card-img-top mx-auto" alt="SIGC">
+                            <div class="card-body">
+                                <h5 class="card-title">SIGC</h5>
+                                <p class="card-text">Gestión de documentos y archivos.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="250">
+                    <a href="http://172.16.0.38/SOLPAN/" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="img_QA/SolPanBO.png" class="card-img-top mx-auto" alt="SolcitudPañol">
+                            <div class="card-body">
+                                <h5 class="card-title">Solicitud Pañol</h5>
+                                <p class="card-text">Consulta y solicita artículos del pañol.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="300">
+                    <a href="http://172.16.0.38/Desarrollo/" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="img_QA/DesarrolloBO.png" class="card-img-top mx-auto" alt="Desarrollo">
+                            <div class="card-body">
+                                <h5 class="card-title">Desarrollo</h5>
+                                <p class="card-text">Revisa FLEs y fichas en desarrollo.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="350">
+                    <a href="http://172.16.0.38/inventarioBO/" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="./imagenes/ark.png" class="card-img-top mx-auto" alt="TomaInventario">
+                            <div class="card-body">
+                                <h5 class="card-title">Toma de Inventarios</h5>
+                                <p class="card-text">Revisa inventario en las distintas bodegas antigua.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
+                    <a href="http://172.16.0.38/Certificados/qa/login.aspx" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="./Imagenes/CertificadoQA.png" class="card-img-top mx-auto" alt="CertificadosQA">
+                            <div class="card-body">
+                                <h5 class="card-title">Certificados QA</h5>
+                                <p class="card-text">Revisa inventario en las distintas bodegas.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="450">
+                    <a href="http://172.16.0.38/FORECAST/" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="img_QA/ForeCastBO.png" class="card-img-top mx-auto" alt="Forecast">
+                            <div class="card-body">
+                                <h5 class="card-title">Productos ForeCast</h5>
+                                <p class="card-text">Consulta datos de productos Forecast.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="500">
+                    <a href="http://172.16.0.38/TARJASFLEXIBLE/" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="img_QA/tarjasFlexible2.png" class="card-img-top mx-auto" alt="ImpresionTarjasFSBO">
+                            <div class="card-body">
+                                <h5 class="card-title">Entrada Mercadería BO</h5>
+                                <p class="card-text">Imprime y gestiona etiquetas Flexible.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="550">
+                    <a href="http://172.16.0.38/TARJAS/" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="img_QA/ImpresionTarjasFSBO.png" class="card-img-top mx-auto" alt="ImpresionTarjasFS">
+                            <div class="card-body">
+                                <h5 class="card-title">Impresión Tarjas FS</h5>
+                                <p class="card-text">Imprime y gestiona etiquetas FS.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="600">
+                    <a href="http://172.16.0.38/NewInventario/" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="./Imagenes/inventarioNueva.jpg" class="card-img-top mx-auto" alt="TomaInventarioPDA">
+                            <div class="card-body">
+                                <h5 class="card-title">Toma de Inventario PDA</h5>
+                                <p class="card-text">Toma de inventario PDA nueva.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="650">
+                    <a href="https://helpdesk.bo.cl/portal/es/signin" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="./Imagenes/mesadeayuda.png" class="card-img-top mx-auto" alt="MesaDeAyuda">
+                            <div class="card-body">
+                                <h5 class="card-title">Mesa de Ayuda Usuarios</h5>
+                                <p class="card-text">Mesa de ayuda para los usuarios.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="700">
+                    <a href="http://192.168.2.2/CalidadBO/" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="img_QA/CertificadoCalidadBO.png" class="card-img-top mx-auto" alt="CertificadoCalidadBO">
+                            <div class="card-body">
+                                <h5 class="card-title">Certificados de Calidad</h5>
+                                <p class="card-text">Accede a certificados de calidad BO.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="750">
+                    <a href="http://172.16.0.38/BO/goodreceipts/login.aspx" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="img_QA/goodreceiptBO.png" class="card-img-top mx-auto" alt="GoodReceiptBO">
+                            <div class="card-body">
+                                <h5 class="card-title">Good Receipt</h5>
+                                <p class="card-text">Verifica recibos de mercancías.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="800">
+                    <a href="http://172.16.0.38/UploadArtes/login.aspx" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="img_QA/CargaPDF.png" class="card-img-top mx-auto" alt="CargaPDF">
+                            <div class="card-body">
+                                <h5 class="card-title">Carga de PDF</h5>
+                                <p class="card-text">Para ser mostradas en la Ficha Técnica.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="850">
+                    <a href="https://bopackagingsa.sharepoint.com/sites/BaseDeConocimientosTI" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="./Imagenes/IconoVideos.png" class="card-img-top mx-auto" alt="Base Conocimientos BO">
+                            <div class="card-body">
+                                <h5 class="card-title">Base Conocimientos</h5>
+                                <p class="card-text">Base Conocimientos BO Packaging.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="900">
+                    <a href="http://172.16.2.246:91/SolicitudesOC/" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="./Imagenes/purchase-order-system-1-0-2-1491829449-600x600.png" class="card-img-top mx-auto" alt="SolCom OLD">
+                            <div class="card-body">
+                                <h5 class="card-title">SolCom ANTIGUO</h5>
+                                <p class="card-text">Solicitudes de compra BOP OLD Histórico.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="950">
+                    <a href="http://172.16.0.52/boSolCom" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="./Imagenes/orden-de-compra.png" class="card-img-top mx-auto" alt="SolCom 2025">
+                            <div class="card-body">
+                                <h5 class="card-title">SolCom 2025</h5>
+                                <p class="card-text">Solicitudes de compra BOP.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-lg-2 col-md-4 col-sm-6" data-aos="zoom-in" data-aos-delay="1000">
+                    <a href="http://172.16.0.78/boPEV_FS" class="card-link">
+                        <div class="card text-center h-100">
+                            <img src="./Imagenes/Imagen-Inicio-Polipapel.png" class="card-img-top mx-auto" alt="PEV 2025">
+                            <div class="card-body">
+                                <h5 class="card-title">PEV 2025</h5>
+                                <p class="card-text">Accede al planificador de etiquetas y vasos.</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 mt-auto">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Acerca de -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="100">
+                    <h5 class="fw-bold mb-3 text-light">Acerca de</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="https://bswitch.cl/" class="text-decoration-none text-light opacity-75">
+                                <i class="fas fa-angle-right me-2"></i>BSWITCH
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://bo.cl/contacto/" class="text-decoration-none text-light opacity-75">
+                                <i class="fas fa-angle-right me-2"></i>Contacto
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Soporte -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="200">
+                    <h5 class="fw-bold mb-3 text-light">Soporte</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="Tickets.aspx" class="text-decoration-none text-light opacity-75">
+                                <i class="fas fa-angle-right me-2"></i>Soporte
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="#" class="text-decoration-none text-light opacity-75">
+                                <i class="fas fa-angle-right me-2"></i>Seguridad
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Más Links -->
+                <div class="col-md-3 col-sm-6" data-aos="fade-up" data-aos-delay="300">
+                    <h5 class="fw-bold mb-3 text-light">Más Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <a href="https://bo.cl/quienes-somos/" class="text-decoration-none text-light opacity-75">
+                                <i class="fas fa-angle-right me-2"></i>Quiénes Somos
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://bo.cl/flexibles-2/" class="text-decoration-none text-light opacity-75">
+                                <i class="fas fa-angle-right me-2"></i>Flexible
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://bo.cl/polipapel-2/" class="text-decoration-none text-light opacity-75">
+                                <i class="fas fa-angle-right me-2"></i>Polipapel
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://bo.cl/tecnologias-2/" class="text-decoration-none text-light opacity-75">
+                                <i class="fas fa-angle-right me-2"></i>Tecnologías
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="https://bo.cl/clientes-2/" class="text-decoration-none text-light opacity-75">
+                                <i class="fas fa-angle-right me-2"></i>Clientes
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Información de Contacto y Redes Sociales -->
+                <div class="col-md-3 col-sm-12" data-aos="fade-up" data-aos-delay="400">
+                    <div class="mb-3">
+                        <a href="PaginaBO.html" class="text-decoration-none">
+                            <h5 class="fw-bold text-light">BO PACKAGING S.A.</h5>
+                        </a>
+                    </div>
+                    <p class="small text-white-50 mb-2">&copy; 2024. by Lenny Roa para <a href="http://www.bo.cl/" target="_blank" class="text-decoration-none text-light">bo.cl</a></p>
+                    <p class="small text-white-50 mb-3">Av. Américo Vespucio 1470, Quilicura, Santiago, Chile - Teléfono: +562 2829 2000 - Fax: +562 2829 2001</p>
+                    <div class="social-icons d-flex gap-2 mt-3">
+                        <a href="#" class="text-decoration-none">
+                            <i class="fab fa-facebook-f" style="color: #3b5998;"></i>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <i class="fab fa-twitter" style="color: #55acee;"></i>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <i class="fab fa-instagram" style="color: #ac2bac;"></i>
+                        </a>
+                        <a href="#" class="text-decoration-none">
+                            <i class="fab fa-youtube" style="color: #ed302f;"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS para animaciones -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Efecto hover en la navbar
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                this.classList.add('animate__animated', 'animate__pulse');
+            });
+            link.addEventListener('mouseleave', function() {
+                this.classList.remove('animate__animated', 'animate__pulse');
+            });
+        });
+    </script>
+</body>
+</html>

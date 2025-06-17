@@ -8,21 +8,35 @@
         "type": "tabs",
         "children": [
           {
-            "id": "1e4e550da192e2c5",
+            "id": "8f03f3e346eae777",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Clases/Sistemas Distribuidos.md",
+                "file": "Clases/Ingeniería de Software.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sistemas Distribuidos"
+              "title": "Ingeniería de Software"
             }
           },
           {
-            "id": "8f03f3e346eae777",
+            "id": "0873f875ca266b36",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Preguntas SOLEMNE Comunicaciones Digitales.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Preguntas SOLEMNE Comunicaciones Digitales"
+            }
+          },
+          {
+            "id": "6842a9d7449cabb6",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -59,7 +73,7 @@
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
-              "title": "Explorador de archivos"
+              "title": "Files"
             }
           },
           {
@@ -157,13 +171,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Actividades Clases.md",
+                "file": "Preguntas SOLEMNE Comunicaciones Digitales.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Actividades Clases"
+              "title": "Outline of Preguntas SOLEMNE Comunicaciones Digitales"
             }
           }
         ],
@@ -176,45 +190,44 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Abrir selector rápido": false,
-      "graph:Abrir vista gráfica": false,
-      "canvas:Crear nuevo lienzo": false,
-      "daily-notes:Abrir la nota de hoy": false,
-      "templates:Insertar plantilla": false,
-      "command-palette:Abrir paleta de comandos": false
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
     }
   },
-  "active": "faf976156dedae6c",
+  "active": "0873f875ca266b36",
   "lastOpenFiles": [
-    "Clases/Comunicaciones Digitales.md",
-    "Clases/Sistemas Distribuidos.md",
-    "Resumen Actividad TTL.canvas",
-    "Chanchito Ing Software.md",
-    "Chanchito GO S1.png",
-    "Chanchito GO S1.canvas",
-    "Actividades Clases.md",
-    "Fotos/GO_Control_3_Diagrama_Completo.png",
-    "Fotos/Gestion Organizacional/Pasted image 20250423235933.png",
-    "Fotos/Gestion Organizacional/Pasted image 20250423235900.png",
-    "Fotos/Gestion Organizacional/Pasted image 20250423235225.png",
-    "Fotos/Gestion Organizacional/Pasted image 20250423235051.png",
-    "Fotos/Gestion Organizacional/Pasted image 20250423235035.png",
-    "Fotos/Gestion Organizacional/Pasted image 20250423232741.png",
-    "Fotos/Gestion Organizacional/Pasted image 20250423230543.png",
-    "Fotos/Gestion Organizacional",
-    "Ayudantias/Sistemas Distribuidos AY.md",
-    "Fotos/Sistemas Distribuidos/Pasted image 20250604194245.png",
     "Clases/Ingeniería de Software.md",
-    "Ayudantias/Ingeniería de Software AY.md",
+    "Preguntas SOLEMNE Comunicaciones Digitales.md",
     "Ayudantias/Gestion Organizacional AY.md",
+    "Ayudantias/Ingeniería de Software AY.md",
+    "Ayudantias/Sistemas Distribuidos AY.md",
+    "Ayudantias/Comunicaciones Digitales AY.md",
+    "Resumen Actividad TTL.canvas",
+    "Pasted image 20250605121411.png",
+    "Pasted image 20250605121409.png",
+    "Chanchito Ing Software.md",
+    "Actividades Clases.md",
+    "Clases/Sistemas Distribuidos.md",
     "Clases/Gestión Organizacional.md",
+    "Fotos/GO_Control_3_Diagrama_Completo.png",
     "Fotos/GO_Control_3_Diagrama_Completo.png.crdownload",
+    "Fotos/Pasted image 20250410114716.png",
     "Categoria.md",
     "Ingeniería de Software.pdf",
     "Untitled.canvas",
-    "Ayudantias/Comunicaciones Digitales AY.md",
+    "Fotos/Pasted image 20250410121653.png",
+    "Clases/Comunicaciones Digitales.md",
     "2025-04-10.md",
     "Untitled 1.canvas",
+    "Fotos/Pasted image 20250410122203.png",
+    "Fotos/Comunicaciones digitales F/Pasted image 20250327144522.png",
+    "Fotos/Comunicaciones digitales F/Pasted image 20250327144501.png",
+    "Fotos/Comunicaciones digitales F/Pasted image 20250327145012.png",
+    "Fotos/Comunicaciones digitales F/Pasted image 20250327145811.png",
     "HANA.md",
     "Fotos/Comunicaciones digitales F",
     "Untitled 1.md",
@@ -225,6 +238,7 @@
     "Ingenieria de Software/desktop.ini",
     "Clases",
     "BE_LEARNING/desktop.ini",
-    "desktop.ini"
+    "desktop.ini",
+    "BE_LEARNING"
   ]
 }

@@ -2,6 +2,7 @@
 # Clase 4 (21/03/2025)
 ## Escalabilidad
 
+
 Habilidad de un sistema para expandir las necesidades del negocio y cumplir con los requerimientos.
 
 > Los sistemas son dinámicos
@@ -767,7 +768,7 @@ Entrada/Salida (Join/Leave) **Churm**
 
 #### C/S vs P2P
 
-![[Pasted image 20250410114716 1.png]]
+![[Pasted image 20250410114716.png]]
 
 ### ¿Por qué P2P?
 
@@ -788,7 +789,7 @@ Por encima de la red "física":
 
 Peers que se sobrepone a la primera red
 
-![[Pasted image 20250410115506 1.png]]
+![[Pasted image 20250410115506.png]]
 
 Si falla la conexión en la red física, el peer que está conectado directamente también.
 
@@ -834,7 +835,7 @@ Bueno para mapeos
 	Malo para datos
 
 
-![[Pasted image 20250410121653 1.png]]
+![[Pasted image 20250410121653.png]]
 
 
 Super eficiente para buscar
@@ -1511,4 +1512,133 @@ mantiene cola tanto para P1 (a si mismo) como para enviar a P2
 Cuando recibo la respuesta, organizo mi nocion temporal acorde a la cola recibida de P2.
 Una vez que se ordenan las interacciones, si bien hay marcas de tiempo distintas, sigue el mismo orden.
 Los N eventos estarán en cada cola (P1 y P2) y se ordena secuencialmente.
+
+
+# Clase 20
+03/06/25
+
+## Algoritmos Elección
+Muchos algoritmos distribuidos requieren que un proceso atúe como coordinador (tiene que ser estable).
+
+Como yo tengo dinanismo en la red, no puedo definir un solo ID, las condiciones van a cambiar con el tiempo.
+Lo que se hace es asignar el algoritmo por prioridad para que uno tenga un ID con mayor prioridad que otro.
+### Algoritmo Bully
+Garcia-Molina 1982, el más grande gana
+
+- *Tiempo de Propagación*
+Los mensajes se entregan dentro de un periodo máx de $T_p$ segundos (tiempo propagación).
+- *Tiempo de tratamiento*
+Un nodo responde a todos los mensajes dentro de $T_t$ segundos desde su recepción
+- Procesos estan física o lógicamente ordenados, de tal forma que cada uno tiene un identificador y sabe cuantos procesos participan.
+
+Dependen de detectar las caídas de un coordinador (Timeout) para saber cuándo termina un proceso
+
+Para detectar caídas, se crean *suposiciones*
+
+Las dos primeras suposiciones indican que se detecta una caída si no responde a un mensaje en un tiempo $T = 2T_p + T_t$
+
+#### Elección
+
+- Si se detecta que el coordinador no responde --> Nueva elección
+- Proceso P envía un mensaje de elección a todos aquellos procesos con un ID mayor
+- Si nadie responde --> P gana la elección y es el coordinador
+- Si recibe una respuesta mayor --> P no tienee nada que hacer (no será coordinador)
+- Receptores responden con OK
+
+Se envía mensaje además al anterior coordinador por si el timeout es tema de latencia simplemente. Si responde --> Mantiene su puesto de coordinador
+
+**Escalabilidad** Mayor cantidad de mensajes de forma paralela, mayor congestión.
+Funciona a pequeña escala, en grandes se llenaría de mensajes a todos los procresos
+
+¿Qué pasa si hay particiones de red?
+
+Eventualmente se hace la elección de forma aislada, quedando coordinadores de forma "local" 
+1 a 2 coordinadores separados.
+
+#### Ventajas
+
+- Tolerante a Fallos
+- Descentralizado
+- Simplicidad
+
+#### Desventajas
+
+- Overhead de mensajes --> mxo mensaje
+- Asignación de prioridad --> Inestabilidad en proceso de elección
+- Particiones de red --> Elecciones aisladas (coordinadores concurrentes)
+- Concurrencia en la elección --> Puede generar aumentos en latencia coordinando la elección
+
+#### Resumen
+- Algoritmo simple y tolerante a fallos
+- Ideal en sistema pequeños
+- Numero de procesos afecta latencia y escalabilidad
+- Un solo coordinador
+
+### Algoritmo de Anillo
+NO usa token, arreglo tamaño N.
+
+- Procesos están fisica/logicamente ordenados, cada uno conoce su sucesor
+- Luego de detectar coordinador caído, el proceso inicia el proceso de elección enviando un **mensaje** de forma *unidireccional*
+
+Paso a paso:
+ - El mensaje contiene su numero de proceso
+ - Si el sucesor está caído, envía el mensaje al siguiente 
+ - Cada proceso que recibe el mensaje agrega su número de proceso a la lista como candidato a la elección
+ - Una vez que vuelve al P1
+
+0 --> 1 --> 2 --> N --> 0
+
+[0] --> [0,1] --> [0,1,2] --> [0,1,2,N]
+
+Se puede mejorar el mensaje, teniendo el ID más alto/menor unicamente para reducir el arreglo.
+- COSTO LINEAL
+- Mientras mas cantidad de procesos, mas mensajes a enviar.
+
+![[Pasted image 20250605121411.png]]
+
+### Algoritmo Franklin
+Selecciona un único lider entre todos los procesos de la red con forma de anillo.
+
+- Converge en fases (rondas)
+Cada proceso tiene 3 estados
+Activo -> Cumple la condicion de que es mayor ID que el proceso anterior, Candidato a ser coordinador
+Inactivo -> Detecta que es menor que los 2 procesos comparados.
+Rondas -> Serie de rondas sincronas. En cada ronda se intercambian mensajes de foma bidireccional.
+
+- Anillo Bidireccional
+- ID único
+- Estados de los procesos
+	- Activos
+	- Inactivo
+
+Compara el propio ID, si es menor que el vecino es el 
+Si soy el menor, paso a ser Pasivo
+Si tengo un ID una vez mayor del vecino, paso a ser Activo y candidato a ser coordinador
+
+1. Estan todos activos y se inicia la elección
+2. Envio a mis vecinos bidireccional comparando si mi ID es mayor/menor
+
+4 -> 5 <- 6 (5 Sigue activo)
+5 -> 6 <- 0 (6 Sigue activo)
+6 -> 0 <- 1 (0 pasa a ser inactivo)
+6 -> 1 <- 2 (1 pasa a ser inactivo) 
+...
+6 -> 6 <- 6 (6 queda como el coordinador)
+
+> Proceso N log n
+
+#### Ventajas
+- Eficiencia de mensajes 
+- Distribución
+- Tolerancia a fallos (parcial)
+#### Desventajas
+- Sincronización: Requiere sincronizacion entre rondas
+- Conocimiento del ID: Cada proceso tiene un ID único
+- Fallos:  Puede llevar a tener múltiples líderes, difícil de ver
+EJ) 3 ejércitos con mensajero de E1 a E2
+
+### Elección Wireless
+Genera coordinadores Locales (más de 1)
+
+Pseudo elección con nodos críticos. Si se muere tengo que ir a reemplazarlo o disuadir (dividir) el tráfico con más nodos como si fuera un rio.
 

@@ -6,7 +6,6 @@
     "pageSize": "Letter",
     "landscape": false,
     "margin": "0",
-    "downscalePercent": 76
-  },
-  "alwaysUpdateLinks": true
+    "downscalePercent": 69
+  }
 }

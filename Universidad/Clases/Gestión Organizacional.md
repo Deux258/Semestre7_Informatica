@@ -1156,6 +1156,43 @@ Organigrama
 La imagen actual de la empresa
 
 
+# Clase 20
+03/06/25
+
+*DO* Desarrollo Organizacional
+PLANIFICAR el cambio.
+
+Para que exista DO,tiene que estar la presencia de 3 cambios:
+
+- *AC* Agente de Cambio (Interno)
+- *E* Empresa -> Donde quiero hacer el cambio
+- Objetivo -> Objetivos a desarrollar
+
+Para no disminuir la productividad con el cambio de cultura.
+
+Descongela *AC* --             -- Recongelar
+  			   |          |
+	Cap 17.  	  |          |   Indicador - (Puedo cambiar el análisis/volver al inicio)
+			  |          |			  
+			   ------
+			   Acción
+
+- Descongelar *AC*
+	- Planificación
+	- Niveles Culturales
+- Estrategia - Táctica de Cambio
+
+- Acción - Cambio en sí
+
+- Indicadores
+
+- Recongelar
+	- Cuando se realiza el cambio al 100% (3-5 años)
+
+
+
+
+
 
 
 

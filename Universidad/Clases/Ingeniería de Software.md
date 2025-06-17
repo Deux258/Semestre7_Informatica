@@ -1049,6 +1049,88 @@ Necesito agregar nuevos tipos de x en el futuro sin modificar el código existen
 - Definir método de creaión en una interfaz (clase base) y luego tener subclases que implementen este método para crear objetos
 EJ: Clase Logistics con metodo create_X() y luego RoadLogistic, SeaLogistic, AirLogistic para separar "por tierra, mar y aire"
 
+# Clase 22
+16/06/25
+
+## Patrones de Comportamiento
+Diagramas de SECUENCIAS
+
+Caracterizan el modo en el que las clases y objetos interactuan y se reparten la responsabilidad
+
+- Definen algoritmos, flujos de control o formas de interracción entre objetos para evitar acoplamiento de clases
+
+**Principales Diferencias**
+
+- *Creacionales*
+	- Enfoque en el proceso de creación de objetos
+- Estructurales
+	- Organización y relaciones entre distintos objetos
+- *Comportamiento*
+	- Interacción y comportamiento
+
+
+### Mediator
+Patron que funciona como mediador entre el Usuario y el Receptor
+
+- Mayor escalabilidad
+- Proporciona un objeto central para que los componentes se comuniquen entre sí
+
+Chat implementado en Google Chat
+
+### Memento
+Para problemas de encapsulamiento (por ej public text (tiene que ser priv))
+
+- Permite capturar y externalizar el estado interno de un objeto sin violar el encapsulamiento
+
+
+### Observer
+Problema de Suscripciones (Notificaciones a todos)
+Permite definir una dependencia de 1 a N
+
+- Cuando un objeto cambia su estado, todas sus dependencias son notificadas y actualizadas automáticamente
+
+### State
+Problema de reproductor de música con diferentes estados (reproduciendo, pausado, detenido)
+Si yo tengo más estados, difícil escalabilidad
+
+- Permite cambiar el comportamiento de un objeto cuando su estado interno cambia
+- Se puede implementar definiendo:
+	  - Interfaz de estado
+	  - Subclases para cada estado específico
+	  - Invoco métodos en el objeto de estado actual
+
+### Strategy 
+App que calcula el camino más corto. ¿Cómo puedo organizar mi codigo para que sea extensible?
+
+Problema: No cumple con SRB Responsabilidad única, a mas rutas + modificaciones en la clase
+
+- Define una familia de algoritmos, encapsula cada uno y los hace intercambiables
+- Se puede cambiar el algoritmo en tiempo de ejecución
+
+### Template Method
+Monopoly que incluye varias etapas comunes (inicializacion del juego, turno de jugadores y finalizacion del juego).
+Problema: Escalamiento a múltiples juegos con la misma estructura duplicando código
+
+- Creo un template (esqueleto) de algoritmo en un método, dejando algunos pasos para subclases
+
+### Visitor 
+Editor de gráficos que puede trabajar con distintos tipos de formas (circulos, rectangulos, lineas)
+Problema: Escalamiento a múltiples figuras donde cada una tiene operaciones distintas
+
+- Cada persona que manipule el objeto lo hace de forma independiente
+- Puedo manipular paralelamente distintas figuras
+EJ) Prueba
+
+#### Prototype NO VA
+
+HASTA FLYWEIGHT
+
+
+
+
+
+
+
 
 
 
