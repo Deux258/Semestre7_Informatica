@@ -69,7 +69,7 @@ a. Un circuito con codificación NRZ necesita una fuente de voltaje que pueda va
 	el 1 digital esta a Av
 	el 0 digital esta a -Av
 	Plt: FAKE
-*b.* El código RZ operea de forma más eficiente cuando hay una proporción equilibrada entre unos y ceros
+*b.* El código RZ opera de forma más eficiente cuando hay una proporción equilibrada entre unos y ceros
 	Return to Zero: si transmito 10 bits donde la mitad es 1 y la otra es 0, esta opera más eficiente por la sumatoria de las áreas bajo las curvas (no sé si esta correcta esta desc.)
 	Plt: VERDADERO
 
