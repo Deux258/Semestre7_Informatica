@@ -8,38 +8,55 @@
         "type": "tabs",
         "children": [
           {
-            "id": "0873f875ca266b36",
+            "id": "6842a9d7449cabb6",
             "type": "leaf",
             "state": {
               "type": "canvas",
               "state": {
-                "file": "Untitled.canvas",
+                "file": "Chanchitos/Chanchito SD S2.canvas",
                 "viewState": {
-                  "x": -1038.6634675279297,
-                  "y": 3313.981864182054,
-                  "zoom": -0.8619827986745703
+                  "x": 618.9677562553301,
+                  "y": -1087.7314700258166,
+                  "zoom": -0.7201963260199857
                 }
               },
               "icon": "lucide-layout-dashboard",
-              "title": "Untitled"
+              "title": "Chanchito SD S2"
             }
           },
           {
-            "id": "6842a9d7449cabb6",
+            "id": "0873f875ca266b36",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Clases/Sistemas Distribuidos.md",
+                "file": "Preguntas SOLEMNE Comunicaciones Digitales.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Sistemas Distribuidos"
+              "title": "Preguntas SOLEMNE Comunicaciones Digitales"
+            }
+          },
+          {
+            "id": "cdc91ef31d3984b5",
+            "type": "leaf",
+            "state": {
+              "type": "canvas",
+              "state": {
+                "file": "Chanchitos/Chanchito SD S2.canvas",
+                "viewState": {
+                  "x": -2109.515041928721,
+                  "y": 483.9114968225897,
+                  "zoom": -1.5808988882831723
+                }
+              },
+              "icon": "lucide-layout-dashboard",
+              "title": "Chanchito SD S2"
             }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -187,34 +204,42 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "6842a9d7449cabb6",
+  "active": "cdc91ef31d3984b5",
   "lastOpenFiles": [
+    "Fotos/Chanchito SD/Pasted image 20250624231449.png",
+    "Fotos/Chanchito SD/Pasted image 20250624231205.png",
+    "Fotos/Chanchito SD/Pasted image 20250624230833.png",
+    "Fotos/Chanchito SD/Pasted image 20250624225335.png",
+    "Fotos/Chanchito SD/Pasted image 20250624224928.png",
+    "Actividades Clases.md",
     "Ayudantias/Sistemas Distribuidos AY.md",
+    "Preguntas SOLEMNE Comunicaciones Digitales.md",
+    "Actividades puntuales/Resumen Actividad TTL.canvas",
+    "Actividades puntuales/Ingeniería de Software.pdf",
+    "Actividades puntuales/Comunicaciones_Digitales_-_Repaso_S1[1].pdf",
+    "Actividades puntuales/Categoria.md",
+    "Actividades puntuales/Actividades Clases.md",
+    "Chanchitos/Chanchito SD S2.canvas",
+    "Fotos/Chanchito SD/Pasted image 20250624223323.png",
+    "Fotos/Chanchito SD/Pasted image 20250624222013.png",
+    "Fotos/Chanchito SD/Pasted image 20250605121409.png",
+    "Fotos/Chanchito SD/Pasted image 20250624220623.png",
+    "Fotos/Chanchito SD/Pasted image 20250624220245.png",
+    "Fotos/Chanchito SD/Pasted image 20250624215934.png",
+    "Clases/Ingeniería de Software.md",
+    "Chanchitos/Chanchito CD S2.canvas",
+    "Ayudantias/Comunicaciones Digitales AY.md",
+    "Clases/Comunicaciones Digitales.md",
+    "Chanchitos/Chanchito Ing Software.md",
+    "Fotos/Chanchito CD",
     "Clases/Sistemas Distribuidos.md",
     "Ayudantias/Ingeniería de Software AY.md",
-    "Clases/Comunicaciones Digitales.md",
-    "Untitled.canvas",
-    "Chanchito SD S2.png",
-    "Fotos/Chanchito SO/Pasted image 20250617222559.png",
-    "Fotos/Chanchito SO/Pasted image 20250605121409.png",
-    "Fotos/Chanchito SO/Pasted image 20250605121411.png",
-    "Fotos/Chanchito SO/Pasted image 20250617193347.png",
-    "Fotos/Chanchito SO/Pasted image 20250617193442.png",
-    "Fotos/Chanchito SO/Pasted image 20250617193914.png",
-    "Fotos/Chanchito SO/Pasted image 20250617215734.png",
-    "Fotos/Chanchito SO/Pasted image 20250617220020.png",
-    "Fotos/Chanchito SO/Pasted image 20250617220513.png",
     "Resumen Actividad TTL.canvas",
-    "Preguntas SOLEMNE Comunicaciones Digitales.md",
-    "Chanchitos/Chanchito Ing Software.md",
     "Chanchitos/Chanchito GO S1.canvas",
     "Chanchitos",
-    "Fotos/Chanchito SO",
-    "Actividades Clases.md",
-    "Clases/Ingeniería de Software.md",
+    "Fotos/Chanchito SD",
     "Clases/Gestión Organizacional.md",
     "Ayudantias/Gestion Organizacional AY.md",
-    "Ayudantias/Comunicaciones Digitales AY.md",
     "Fotos/GO_Control_3_Diagrama_Completo.png.crdownload",
     "Categoria.md",
     "Ingeniería de Software.pdf",
@@ -226,9 +251,6 @@
     "Fotos",
     "BE_LEARNING/Clase 1.md",
     "create a link.md",
-    "Ayudantias",
-    "Ingenieria de Software/desktop.ini",
-    "Clases",
-    "BE_LEARNING/desktop.ini"
+    "Ayudantias"
   ]
 }

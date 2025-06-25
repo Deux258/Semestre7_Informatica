@@ -1,7 +1,7 @@
-PD: Al profe no le gusta Ninguna de las respuestas
+PD: Al profe no le gusta "Ninguna de las respuestas"
 Una buena parte de las respuestas se pueden descartar con lógica
 
-1. La relacuion señal-ruido en una modulacion afecta a
+1. La relacion señal-ruido en una modulacion afecta a
 	R: tasa de error de bit
 
 2. Un repetidor regenerativo se coloca en el camino de la señal para 
@@ -30,7 +30,7 @@ factor de rolloff es usado en el filtro de coseno realzado, disminuye la interfe
 
 7. Una modulación multinivel permite
 	R: Reducir el ancho de banda ocupado
-	Cada nivel representa una pareja de bits (2 bits, 4 palabras), mayor cantidad de palabras transmitidas ($l$ bits )
+	Cada nivel representa una pareja de bits (2 bits, 4 palabras), mayor cantidad de palabras transmitidas ($l$ bits)
 
 8. El umbral optimo para diferenciar entre dos niveles de una modulación binaria es
 	R: La mitad de la distancia entre ambos niveles
